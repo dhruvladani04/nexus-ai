@@ -1,0 +1,13 @@
+langchain>=0.1.0
+langgraph>=0.0.10
+langchain-google-genai>=0.0.9
+langchain-community>=0.0.10
+langchain-mongodb>=0.0.3
+pymongo>=4.6.0
+streamlit>=1.31.0
+pypdf>=4.0.0
+youtube-transcript-api>=0.6.0
+beautifulsoup4>=4.12.0
+python-dotenv>=1.0.0
+html2text>=2020.1.16
+yt-dlp>=2023.10.0
