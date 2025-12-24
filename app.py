@@ -75,7 +75,7 @@ if st.sidebar.button("Ingest Data"):
                     tmp_file.write(uploaded_file.getbuffer())
                     temp_path = tmp_file.name
                 
-                cmd = ["python", "-m", "data_pipeline.ingestion", "--type", source_type, "--url", temp_path]
+                cmd = [sys.executable, "-m", "data_pipeline.ingestion", "--type", source_type, "--url", temp_path]
                 
                 # Use absolute path for CWD to avoid empty string error
                 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -100,7 +100,7 @@ if st.sidebar.button("Ingest Data"):
     elif source_type != "resume" and url_input:
         with st.sidebar.status(f"Ingesting from {source_type}...") as status:
             try:
-                cmd = ["python", "-m", "data_pipeline.ingestion", "--type", source_type, "--url", url_input]
+                cmd = [sys.executable, "-m", "data_pipeline.ingestion", "--type", source_type, "--url", url_input]
                 
                 current_dir = os.path.dirname(os.path.abspath(__file__))
                 result = subprocess.run(cmd, capture_output=True, text=True, cwd=current_dir)
